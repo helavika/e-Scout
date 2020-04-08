@@ -17,12 +17,7 @@ class Messages(models.Model):
     id = models.AutoField(primary_key=True)
     text = models.TextField()
     date = models.BigIntegerField()
-    chat = models.ForeignKey(Chat)
-
-
-class MoneyBag(models.Model):
-    id = models.AutoField(primary_key=True)
-    money_count = models.FloatField()
+    chat = models.ForeignKey(Chat, on_delete=models.CASCADE)
 
 
 class User(models.Model):
@@ -31,11 +26,11 @@ class User(models.Model):
     last_name = models.TextField()
     status = models.TextField()
     got_achievements = models.ManyToManyField(Achievements)
-    money_bag = models.OneToOneField(MoneyBag)
+    money_bag = models.FloatField()
     chats = models.ManyToManyField(Chat)
 
 
 class Photo(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     data = models.TextField()
