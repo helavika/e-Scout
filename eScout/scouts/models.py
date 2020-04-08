@@ -6,6 +6,7 @@ class Achievements(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.TextField()
     text = models.TextField()
+    photo_data = models.BigIntegerField()
 
 
 class Chat(models.Model):
@@ -28,6 +29,12 @@ class User(models.Model):
     got_achievements = models.ManyToManyField(Achievements)
     money_bag = models.FloatField()
     chats = models.ManyToManyField(Chat)
+
+    def get_full_name(self):
+        return f'{self.first_name} {self.last_name}'
+
+    def __str__(self):
+        return self.get_full_name(self)
 
 
 class Photo(models.Model):
