@@ -6,7 +6,10 @@ class Achievements(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.TextField()
     text = models.TextField()
-    photo_data = models.BigIntegerField()
+    photo_data = models.TextField()
+
+    def __str__(self, *args, **kwargs):
+        return self.title
 
 
 class Chat(models.Model):
@@ -29,11 +32,15 @@ class User(models.Model):
     got_achievements = models.ManyToManyField(Achievements)
     money_bag = models.FloatField()
     chats = models.ManyToManyField(Chat)
+    is_loged_in = models.BooleanField()
 
-    def get_full_name(self):
+    def is_login(self, *args, **kwargs):
+        return self.is_loged_in
+
+    def get_full_name(self, *args, **kwargs):
         return f'{self.first_name} {self.last_name}'
 
-    def __str__(self):
+    def __str__(self, *args, **kwargs):
         return self.get_full_name(self)
 
 
@@ -41,3 +48,6 @@ class Photo(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     data = models.TextField()
+
+    def __str__(self, *args, **kwargs):
+        return self.data
