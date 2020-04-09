@@ -2,6 +2,10 @@ from django.db import models
 
 # Create your models here.
 
+class AchievementTypes(models.Model):
+    passgit
+
+
 class Achievements(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.TextField()
@@ -26,12 +30,24 @@ class Messages(models.Model):
 
 class User(models.Model):
     id = models.AutoField(primary_key=True)
+
     first_name = models.TextField()
     last_name = models.TextField()
+
     status = models.TextField()
-    got_achievements = models.ManyToManyField(Achievements)
+
+    got_achievements = models.ManyToManyField(
+        Achievements,
+        null=True
+    )
+
     money_bag = models.FloatField()
-    chats = models.ManyToManyField(Chat)
+
+    chats = models.ManyToManyField(
+        Chat,
+        null=True
+    )
+
     is_loged_in = models.BooleanField()
 
     def is_login(self, *args, **kwargs):
