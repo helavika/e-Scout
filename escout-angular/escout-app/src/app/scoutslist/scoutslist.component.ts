@@ -10,12 +10,10 @@ import {log} from 'util';
 })
 export class ScoutslistComponent implements OnInit {
 
-  scoutsList;
   constructor(private getscoutslistservice: GetscoutslistService) {
-    this.scoutsList = this.getscoutslistservice.getScouts();
-    log(this.scoutsList)
-  }
 
+  }
+  scoutsList = this.getscoutslistservice.getScouts();
   ngOnInit(): void {
   }
 

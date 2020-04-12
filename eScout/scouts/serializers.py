@@ -33,12 +33,12 @@ class UserSerializer(serializers.Serializer):
 
     money_bag = serializers.FloatField()
 
-   # chats = ChatSerializer()
+    chats = ChatSerializer(many=True)
 
     is_loged_in = serializers.BooleanField()
 
 
 class PhotoSerializer(serializers.Serializer):
     id = serializers.IntegerField()
-    #user = UserSerializer()
+    user = UserSerializer()
     data = serializers.CharField()
