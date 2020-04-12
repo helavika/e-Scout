@@ -1,0 +1,10 @@
+mat-toolbar{
+  background-color: rgba(52, 128, 128, 0.55);
+}
+
+mat-button{}
+
+.logo{
+  height: 50px;
+  width: 50px;
+}
