@@ -35,17 +35,17 @@ class User(models.Model):
 
     got_achievements = models.ManyToManyField(
         Achievements,
-        null=True
+        default=None
     )
 
     money_bag = models.FloatField()
 
     chats = models.ManyToManyField(
         Chat,
-        null=True
+        blank=True
     )
 
-    is_loged_in = models.BooleanField()
+    is_loged_in = models.BooleanField(default=False)
 
     def is_login(self, *args, **kwargs):
         return self.is_loged_in

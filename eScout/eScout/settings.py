@@ -25,12 +25,6 @@ SECRET_KEY = '++f*3av!0827)48lpmcqse#fkr&hse!25c0^2hl$y51*b3=ls3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '127.0.0.1', '192.168.1.33',
-    'localhost'
-]
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,9 +36,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -124,4 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-ALLOWED_HOSTS = ['192.168.1.33', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.33']
+
+CORS_ORIGIN_ALLOW_ALL = True
