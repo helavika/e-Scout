@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { GetscoutslistService } from '../services/getscoutslist.service';
-import {log} from 'util';
+import {Scout} from '../interfaces/scout';
 
 @Component({
   selector: 'app-scoutslist',
@@ -9,12 +8,17 @@ import {log} from 'util';
   styleUrls: ['./scoutslist.component.css']
 })
 export class ScoutslistComponent implements OnInit {
+  scoutsList: Scout[];
 
-  constructor(private getscoutslistservice: GetscoutslistService) {
+  constructor(private getscoutslistservice: GetscoutslistService) {}
 
+  getScouts(){
+    this.getscoutslistservice.getScouts()
+      .subscribe((data: Scout[]) => this.scoutsList = data)
   }
-  scoutsList = this.getscoutslistservice.getScouts();
+
   ngOnInit(): void {
+    this.getScouts()
   }
 
 

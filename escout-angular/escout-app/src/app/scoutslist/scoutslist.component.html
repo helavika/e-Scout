@@ -1,2 +1,9 @@
-<p>scoutslist works!</p>
-{{scoutsList}}
+<div >
+  <mat-card *ngFor="let scout of scoutsList" layout-align="center center">
+    <mat-card-header>{{scout.first_name}} {{scout.last_name}}
+    </mat-card-header>
+    <mat-card-subtitle>{{scout.status}}</mat-card-subtitle>
+
+    <img mat-card-image src="{{scout.got_achievements[0].photo_data}}">
+  </mat-card>
+</div>

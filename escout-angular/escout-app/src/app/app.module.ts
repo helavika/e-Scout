@@ -11,6 +11,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {HttpClientModule} from "@angular/common/http";
+import {MatCardModule} from '@angular/material/card';
 
 const appRoutes: Routes = [
   { path: 'scouts', component: ScoutslistComponent },
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatMenuModule,
     RouterModule.forRoot(appRoutes),
+    MatCardModule,
 
   ],
   providers: [],

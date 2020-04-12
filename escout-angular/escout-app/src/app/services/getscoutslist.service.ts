@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Scout } from '../interfaces/scout';
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -9,10 +10,10 @@ export class GetscoutslistService {
 
   constructor(private http: HttpClient) { }
 
-  private ip = 'http://192.168.1.33:8000/';
+  private ip = 'http://127.0.0.1:8000/';
   private url = 'scouts/get-scouts-list/';
 
-  getScouts (): Observable<any> {
-    return this.http.get<any>(this.ip+this.url);
+  getScouts (): Observable<Scout[]> {
+    return this.http.get<Scout[]>(this.ip+this.url);
   }
 }
