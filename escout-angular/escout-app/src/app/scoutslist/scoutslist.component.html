@@ -1,8 +1,11 @@
 <div >
   <mat-card *ngFor="let scout of scoutsList" layout-align="center center">
-    <mat-card-header>{{scout.first_name}} {{scout.last_name}}
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{scout.first_name}} {{scout.last_name}}</mat-card-title>
+      <mat-card-subtitle>{{scout.status}}</mat-card-subtitle>
     </mat-card-header>
-    <mat-card-subtitle>{{scout.status}}</mat-card-subtitle>
+
 
     <img mat-card-image src="{{scout.got_achievements[0].photo_data}}">
   </mat-card>
