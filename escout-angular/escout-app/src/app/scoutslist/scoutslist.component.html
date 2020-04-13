@@ -1,12 +1,13 @@
-<div >
-  <mat-card *ngFor="let scout of scoutsList" layout-align="center center">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{scout.first_name}} {{scout.last_name}}</mat-card-title>
-      <mat-card-subtitle>{{scout.status}}</mat-card-subtitle>
-    </mat-card-header>
-
-
-    <img mat-card-image src="{{scout.got_achievements[0].photo_data}}">
-  </mat-card>
-</div>
+<h2 class="main-text">List of the coolest scouts 😎️</h2>
+<mat-card *ngFor="let scout of scoutsList" layout-align="center center">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{scout.first_name}} {{scout.last_name}}</mat-card-title>
+    <mat-card-subtitle>{{scout.status}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{scout.got_achievements[0].photo_data}}">
+  <mat-card-content>
+    <p>Balance: {{ scout.money_bag }}$</p>
+    <p>Online: {{ scout.is_logged_in? 'scouting': 'sleeping'}}</p>
+  </mat-card-content>
+</mat-card>

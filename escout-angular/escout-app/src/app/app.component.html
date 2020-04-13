@@ -7,11 +7,17 @@
   </head>
   <body>
     <mat-toolbar>
-      <img src="assets/img/escoutlogo.svg"
-      class="logo">
-      <span>EScout</span>
+      <a [routerLink]="['/scouts']">
+        <img src="assets/img/escoutlogo.svg"
+        class="logo">
+      </a>
+      <a [routerLink]="['/scouts']">
+        <span>EScout</span>
+      </a>
       <button mat-button>My badges</button>
-      <button mat-button>All badges</button>
+      <a [routerLink]="['/badges']">
+        <button mat-button >All badges</button>
+      </a>
     </mat-toolbar>
 
     <router-outlet></router-outlet>

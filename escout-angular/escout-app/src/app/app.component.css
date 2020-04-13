@@ -1,8 +1,30 @@
+ a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+
 mat-toolbar{
   background-color: rgba(52, 128, 128, 0.55);
 }
 
 mat-button{}
+
+mat-card{
+  width: 88%;
+  max-width: 400px;
+  margin: 5px;
+  background-color: rgba(52, 128, 128, 0.55);
+  display: inline-block;
+}
+
+mat-card-image {
+  max-height: 300px;
+  max-width: 400px;
+}
+
+.main-text{
+  text-align: center
+}
 
 .logo{
   height: 50px;

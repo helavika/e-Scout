@@ -1,0 +1,16 @@
+<h2 class="main-text">List of all badges 🌍️</h2>
+<mat-card class="achievement-card"
+          *ngFor="let achievement of achievementslist">
+  <mat-card-header>
+    <mat-card-title>{{ achievement.title }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{achievement.photo_data}}">
+  <mat-card-content>
+    <p>
+      {{ achievement.text }}
+    </p>
+  </mat-card-content>
+  <a [routerLink]="['/badges']">
+    <button mat-button>How to get it?</button>
+  </a>
+</mat-card>
