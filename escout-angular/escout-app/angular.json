@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "escout-app"
+  "defaultProject": "escout-app",
+  "cli": {
+    "analytics": "b5164313-fc2d-43a0-9c67-4eee37b25e98"
+  }
 }
