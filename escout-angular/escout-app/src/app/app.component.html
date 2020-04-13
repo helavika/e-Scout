@@ -6,21 +6,22 @@
     <title></title>
   </head>
   <body>
-    <mat-toolbar>
-      <a [routerLink]="['/scouts']">
-        <img src="assets/img/escoutlogo.svg"
-        class="logo">
-      </a>
-      <a [routerLink]="['/scouts']">
-        <span>EScout</span>
-      </a>
-      <button mat-button>My badges</button>
-      <a [routerLink]="['/badges']">
-        <button mat-button >All badges</button>
-      </a>
-    </mat-toolbar>
+      <mat-toolbar>
+        <a [routerLink]="['/scouts']">
+          <img src="assets/img/escoutlogo.svg"
+          class="logo">
+        </a>
+        <a [routerLink]="['/scouts']"  class="font-chilanka">
+          <span>EScout</span>
+        </a>
 
-    <router-outlet></router-outlet>
+          <button mat-button class="font-chilanka">My badges</button>
+        <a [routerLink]="['/badges']">
+          <button mat-button class="font-chilanka">All badges</button>
+        </a>
+      </mat-toolbar>
+
+      <router-outlet></router-outlet>
 
   </body>
 </html>

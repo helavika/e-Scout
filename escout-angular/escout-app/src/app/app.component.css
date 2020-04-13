@@ -30,3 +30,15 @@ mat-card-image {
   height: 50px;
   width: 50px;
 }
+
+.font-chilanka{
+  font-family: Chilanka;
+}
+
+.center{
+  text-align: center;
+}
+
+.to-left-side{
+  text-align: left
+}
