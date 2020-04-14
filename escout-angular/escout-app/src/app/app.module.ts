@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,14 +14,8 @@ import { ScoutslistComponent } from './scoutslist/scoutslist.component';
 import { BadgeslistComponent } from './badgeslist/badgeslist.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {MatInputModule} from '@angular/material/input';
 
-const appRoutes: Routes = [
-  { path: 'scouts', component: ScoutslistComponent },
-  { path: 'scouts/:id', component: ScoutslistComponent },
-  { path: 'badges', component: BadgeslistComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
-]
 
 @NgModule({
   declarations: [
@@ -36,15 +29,18 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
-
+    MatInputModule,
   ],
-  providers: [],
+  providers: [AppComponent,
+    ScoutslistComponent,
+    BadgeslistComponent,
+    LoginComponent,
+    RegisterComponent,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
