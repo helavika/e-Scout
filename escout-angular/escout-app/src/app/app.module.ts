@@ -13,11 +13,15 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatCardModule } from '@angular/material/card';
 import { ScoutslistComponent } from './scoutslist/scoutslist.component';
 import { BadgeslistComponent } from './badgeslist/badgeslist.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
   { path: 'scouts', component: ScoutslistComponent },
   { path: 'scouts/:id', component: ScoutslistComponent },
   { path: 'badges', component: BadgeslistComponent},
+  { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
 ]
 
 @NgModule({
@@ -25,6 +29,8 @@ const appRoutes: Routes = [
     AppComponent,
     ScoutslistComponent,
     BadgeslistComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
