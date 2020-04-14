@@ -3,6 +3,8 @@ import { Achievement } from './achievement';
 
 export interface Scout {
   id: bigint;
+  login: string;
+  password: string;
   first_name: string;
   last_name: string;
   status: string;

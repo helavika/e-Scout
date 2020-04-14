@@ -6,6 +6,15 @@ from .models import *
 from .serializers import *
 
 
+class Auth(APIView):
+
+    def get(self, request, *args, **kwargs):
+        return JsonResponse(request, safe=False)
+
+    def post(self, request, *args, **kwargs):
+        return JsonResponse(request, safe=False)
+
+
 class ScoutsList(APIView):
 
     def get(self, request, *args, **kwargs):
@@ -13,7 +22,7 @@ class ScoutsList(APIView):
         return JsonResponse(serializer.data, status=status.HTTP_200_OK, safe=False)
 
     def post(self, request, *args, **kwargs):
-        return HttpResponseNotFound()
+        return JsonResponse()
 
 
 class BadgesList(APIView):
@@ -23,4 +32,4 @@ class BadgesList(APIView):
         return JsonResponse(serializer.data, status=status.HTTP_200_OK, safe=False)
 
     def post(self, request, *args, **kwargs):
-        return HttpResponseNotFound()
+        return JsonResponse()

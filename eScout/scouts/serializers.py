@@ -24,6 +24,9 @@ class MessagesSerializer(serializers.Serializer):
 class UserSerializer(serializers.Serializer):
     id = serializers.IntegerField()
 
+    login = serializers.CharField(required=False)
+    password = serializers.CharField(required=False)
+
     first_name = serializers.CharField()
     last_name = serializers.CharField()
 

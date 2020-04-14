@@ -4,7 +4,9 @@ from django.db import models
 
 
 class Achievements(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.AutoField(
+        primary_key=True
+    )
     title = models.TextField()
     text = models.TextField()
     photo_data = models.TextField()
@@ -28,17 +30,25 @@ class Messages(models.Model):
 class User(models.Model):
     id = models.AutoField(primary_key=True)
 
+    login = models.TextField()
+    password = models.TextField()
+
     first_name = models.TextField()
     last_name = models.TextField()
+
+    user_main_photo = models.TextField(
+        blank=True
+    )
 
     status = models.TextField()
 
     got_achievements = models.ManyToManyField(
         Achievements,
-        default=None
+        default=None,
+        blank=True
     )
 
-    money_bag = models.FloatField()
+    money_bag = models.FloatField( default=0)
 
     chats = models.ManyToManyField(
         Chat,
