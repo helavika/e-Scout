@@ -9,7 +9,13 @@ from .serializers import *
 class Auth(APIView):
 
     def get(self, request, *args, **kwargs):
-        return JsonResponse(request, safe=False)
+        data = request.GET
+        user = User.objects.filter(login=data['login'], password=data['password'])
+        if len(user):
+            serializer = UserSerializer(user[0])
+            return JsonResponse(serializer.data, safe=False)
+        else:
+            return JsonResponse({}, safe=False)
 
     def post(self, request, *args, **kwargs):
         return JsonResponse(request, safe=False)

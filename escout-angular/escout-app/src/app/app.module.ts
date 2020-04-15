@@ -15,6 +15,8 @@ import { BadgeslistComponent } from './badgeslist/badgeslist.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {MatInputModule} from '@angular/material/input';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MypageComponent } from './mypage/mypage.component';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import {MatInputModule} from '@angular/material/input';
     BadgeslistComponent,
     LoginComponent,
     RegisterComponent,
+    MypageComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,8 @@ import {MatInputModule} from '@angular/material/input';
     MatMenuModule,
     MatCardModule,
     MatInputModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [AppComponent,
     ScoutslistComponent,

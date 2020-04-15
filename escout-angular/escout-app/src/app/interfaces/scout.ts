@@ -10,6 +10,7 @@ export interface Scout {
   status: string;
   money_bag: number;
   is_logged_in: boolean;
+  user_main_photo: string;
   got_achievements: Achievement[];
   chats: Chat[];
 }

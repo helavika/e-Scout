@@ -32,6 +32,8 @@ class UserSerializer(serializers.Serializer):
 
     status = serializers.CharField()
 
+    user_main_photo = serializers.CharField()
+
     got_achievements = AchievementsSerializer(many=True)
 
     money_bag = serializers.FloatField()

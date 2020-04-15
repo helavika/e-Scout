@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Scout} from '../interfaces/scout';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,7 @@ export class LoginService {
   private url = 'scouts/login/';
 
   auth (login, password): Observable<any> {
-    return this.http.post<any>(this.ip+this.url, {login: login, password: password});
+    let params = new HttpParams().set("login",login).set("password",password)
+    return this.http.get<any>(this.ip+this.url, {params: params});
   }
 }

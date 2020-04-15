@@ -4,14 +4,14 @@ import {ScoutslistComponent} from './scoutslist/scoutslist.component';
 import {BadgeslistComponent} from './badgeslist/badgeslist.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {MypageComponent} from './mypage/mypage.component';
 
 
 const routes: Routes = [
   { path: 'scouts', component: ScoutslistComponent },
   { path: 'scouts/:id', component: ScoutslistComponent },
   { path: 'badges', component: BadgeslistComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
+  { path: 'my_page', component: MypageComponent},
 ];
 
 @NgModule({

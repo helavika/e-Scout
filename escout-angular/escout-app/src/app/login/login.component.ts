@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AppComponent} from '../app.component';
+import { AppComponent } from '../app.component';
+import { Scout } from '../interfaces/scout';
+import { LoginService } from '../services/login.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +11,24 @@ import {AppComponent} from '../app.component';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private appComponent: AppComponent) { }
+  login: '';
+  password: '';
+
+  constructor(
+    private loginService: LoginService,
+    private appComponent: AppComponent,
+  ) {}
+
+  auth(login: string, password: string) {
+    this.loginService.auth(login, password)
+      .subscribe((data: Scout) => this.appComponent.loggedScout = data);
+  }
+
+
+  onSubmit(login, password) {
+    //this.auth(loginData.login, loginData.password)
+    this.auth(login, password);
+  }
 
   ngOnInit(): void {
   }

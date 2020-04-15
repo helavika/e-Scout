@@ -14,20 +14,20 @@
         <a [routerLink]="['/scouts']"  class="font-chilanka">
           <span>EScout</span>
         </a>
-
-          <button mat-button class="font-chilanka">My badges</button>
-        <a [routerLink]="['/badges']">
+        <a [routerLink]="['/my_page']" *ngIf="loggedScout && loggedScout.id">
+          <button mat-button class="font-chilanka">My Page</button>
+        </a>
+        <a [routerLink]="['/badges']" *ngIf="loggedScout && loggedScout.id">
           <button mat-button class="font-chilanka">All badges</button>
         </a>
-        <a [routerLink]="['/login']">
+        <a [routerLink]="['/login']"*ngIf="!loggedScout || !loggedScout.id">
           <button mat-button class="font-chilanka">Login</button>
         </a>
-        <a [routerLink]="['/register']">
+        <a [routerLink]="['/register']" *ngIf="!loggedScout || !loggedScout.id">
           <button mat-button class="font-chilanka">Register</button>
         </a>
       </mat-toolbar>
-<!--      <app-login *ngIf="!loggedScout"></app-login>-->
-      <router-outlet></router-outlet>
-
+      <app-login *ngIf="!loggedScout || !loggedScout.id"></app-login>
+      <router-outlet *ngIf="loggedScout && loggedScout.id"></router-outlet>
   </body>
 </html>

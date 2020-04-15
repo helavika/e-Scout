@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { LoginService } from './services/login.service';
 import {Scout} from './interfaces/scout';
+import {Achievement} from './interfaces/achievement';
+import {Chat} from './interfaces/chat';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,4 @@ import {Scout} from './interfaces/scout';
 export class AppComponent {
   title = 'escout-app';
   loggedScout: Scout;
-
-  loginservice: LoginService;
-
-  auth(login, password){
-    this.loginservice.auth(login, password)
-      .subscribe((data: Scout) => this.loggedScout = data)
-  }
 }
