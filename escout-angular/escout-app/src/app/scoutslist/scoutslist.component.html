@@ -1,7 +1,11 @@
 <h2 class="main-text font-chilanka">List of the coolest scouts 😎️</h2>
 <mat-card *ngFor="let scout of scoutsList" class="font-chilanka to-left-side">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+    <div mat-card-avatar class="example-header-image">
+      <div  style="height: 50px; width: 50px; text-align: center; overflow: hidden; border-radius: 50px">
+      <img src="{{ scout.user_main_photo }}" style="height: 100%">
+        </div>
+    </div>
     <mat-card-title>{{scout.first_name}} {{scout.last_name}}</mat-card-title>
     <mat-card-subtitle >{{scout.status}}</mat-card-subtitle>
   </mat-card-header>
