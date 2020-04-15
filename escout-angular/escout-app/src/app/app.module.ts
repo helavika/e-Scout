@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MypageComponent } from './mypage/mypage.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { MypageComponent } from './mypage/mypage.component';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDatepickerModule,
   ],
   providers: [AppComponent,
     ScoutslistComponent,
