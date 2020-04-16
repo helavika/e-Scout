@@ -32,7 +32,7 @@ class Scout(APIView):
 
     def get(self, request, *args, **kwargs):
         id = request.GET.get('id')
-        serializer = UserSerializer(User.objects.get())
+        serializer = UserSerializer(User.objects.get(id=id))
         return JsonResponse(serializer.data, status=status.HTTP_200_OK, safe=False)
 
     def post(self, request, *args, **kwargs):
