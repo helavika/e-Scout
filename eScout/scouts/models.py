@@ -32,6 +32,10 @@ class User(models.Model):
 
     login = models.TextField()
     password = models.TextField()
+    email = models.TextField(
+        default='',
+        blank=True
+    )
 
     first_name = models.TextField()
     last_name = models.TextField()
