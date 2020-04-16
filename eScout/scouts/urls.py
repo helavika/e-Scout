@@ -8,5 +8,5 @@ urlpatterns = [
     path('login/', Auth.as_view()),
     path('register/', Scout.as_view()),
     path('get-scout-info/<int:pk>', Scout.as_view()),
-    path('update-scout-info/<string:login>/', Scout.as_view()),
+    path('update-scout-info/<str:login>/', Scout.as_view()),
 ]
