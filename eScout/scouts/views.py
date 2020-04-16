@@ -41,12 +41,20 @@ class Scout(APIView):
 
     def put(self, request, *args, **kwargs):
         data = request.PUT
-        user = UserSerializer.update(
-            User.objects.get(
-                login=data.get('login')
+        try:
+            user = UserSerializer.update(
+                User.objects.get(
+                    login=data.get('login'),
+                    password=data.get('password'),
+                )
             )
-        )
-        return JsonResponse(user, safe=False)
+            return JsonResponse(user, safe=False)
+        except:
+            return JsonResponse(
+                {'info': 'який хитрючий, так просто не вийде'},
+                status=status.HTTP_401_UNAUTHORIZED,
+                safe=False
+            )
 
 
 class BadgesList(APIView):
