@@ -1,5 +1,6 @@
-from django.contrib.auth.models import User
-from django.db import models
+from .models import (User, Achievements,
+                     Chat, Messages,
+                     Photo)
 from rest_framework import serializers
 
 

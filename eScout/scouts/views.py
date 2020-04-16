@@ -2,7 +2,9 @@ from django.http import HttpResponse, JsonResponse, HttpResponseNotFound
 from rest_framework import status
 from rest_framework.views import APIView
 
-from .models import *
+from .models import (User, Achievements,
+                     Chat, Messages,
+                     Photo)
 from .serializers import *
 
 
@@ -10,7 +12,9 @@ class Auth(APIView):
 
     def get(self, request, *args, **kwargs):
         data = request.GET
-        user = User.objects.filter(login=data.get('login'), password=data.get('password'))
+        print(data['login'], data['password'])
+        user = User.objects.filter(login=data['login'], password=data['password'])
+        print('HERE IS THE PROBLEM')
         if len(user):
             serializer = UserSerializer(user[0])
             return JsonResponse(serializer.data, safe=False)
@@ -28,10 +32,10 @@ class ScoutsList(APIView):
         return JsonResponse()
 
 
-class Scout(APIView):
+class ScoutInfo(APIView):
 
     def get(self, request, *args, **kwargs):
-        id = request.GET.get('id')
+        id = request.GET['id']
         serializer = UserSerializer(User.objects.get(id=id))
         return JsonResponse(serializer.data, status=status.HTTP_200_OK, safe=False)
 
@@ -44,8 +48,8 @@ class Scout(APIView):
         try:
             user = UserSerializer.update(
                 User.objects.get(
-                    login=data.get('login'),
-                    password=data.get('password'),
+                    login=data['login'],
+                    password=data['password']
                 )
             )
             return JsonResponse(user, safe=False)
