@@ -1,5 +1,4 @@
-
-# e-Scout
+# about
 <h3>
 We are making this applisaction for people, who want to colorize thier and others lifes with new colors.
 It is about being kind, honest and good neighbor spiderman 🕷️
@@ -10,6 +9,20 @@ As soon as you recieve some badges you get access to join to scouts clan(or crea
 
 Join our team c:
 </h3>
+# e-Scout
+<h3>To start django server: </h3>
+<ul>
+    <li>Create venv out of git project: 'python3 -m venv venv';</li>
+    <li>Input source 'venv/bin/activate' (do it every time when you wanna run server);</li>
+    <li>Go to e-Scout/eScout and then type 'pip3 install -r requirements.txt';</li>
+    <li>Type 'python3 manage.py runserver';</li>
+    <li>Ready c:</li>
+</ul>
+<h3>To start angular frontend: </h3>
+<ul>
+    <li>install angular then nmp install and ng serve</li>
+</ul>
+
 <small>
 You can help us with donate *\^_^/*
 Just write to @Totori or @kobashiri in telegram 

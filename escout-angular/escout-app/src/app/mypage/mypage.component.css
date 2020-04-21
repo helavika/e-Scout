@@ -1,0 +1,31 @@
+.my-page{
+  width: 300px;
+  overflow: hidden;
+  text-align: center;
+}
+.our-color{
+  background-color: rgba(52, 128, 128, 0.55);
+}
+.my-page_top{
+  height: 25px;
+  padding: 5px;
+  margin-top: 5%;
+  background-color: rgba(52, 128, 128, 0.55);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+.my-page_achievements_list{
+  overflow: auto;
+  height: 110px;
+  white-space: nowrap;
+  background-color: white;
+}
+.my-page_achievement{
+  text-align: center;
+  display: inline;
+  margin: 2.5px;
+  padding: 2.5px;
+}
+.my-page_achievement img{
+  height: 100px;
+}

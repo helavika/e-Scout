@@ -1,17 +1,19 @@
-<mat-form-field>
-  <mat-label for="login">
-    Login
-    </mat-label>
-  <input matInput [(ngModel)]="login">
-</mat-form-field>
-<br>
-<mat-form-field>
-  <mat-label for="password">
-    Password
-    </mat-label>
-  <input matInput [(ngModel)]="password">
-</mat-form-field>
-<br>
-<button [disabled]="!(login && password)" mat-button type="submit" class="font-chilanka" (click)="onSubmit(login, password)">
-Log in
-</button>
+<div style="vertical-align: middle;">
+  <mat-form-field>
+    <mat-label for="login">
+      Login
+      </mat-label>
+    <input matInput [(ngModel)]="login">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label for="password">
+      Password
+      </mat-label>
+    <input matInput [(ngModel)]="password">
+  </mat-form-field>
+  <br>
+  <button [disabled]="!(login && password)" mat-button type="submit" class="font-chilanka" (click)="onSubmit(login, password)">
+  Log in
+  </button>
+</div>

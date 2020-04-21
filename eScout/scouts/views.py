@@ -12,9 +12,7 @@ class Auth(APIView):
 
     def get(self, request, *args, **kwargs):
         data = request.GET
-        print(data['login'], data['password'])
         user = User.objects.filter(login=data['login'], password=data['password'])
-        print('HERE IS THE PROBLEM')
         if len(user):
             serializer = UserSerializer(user[0])
             return JsonResponse(serializer.data, safe=False)
