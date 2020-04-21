@@ -1,5 +1,19 @@
-<p>Welcome back!</p>
-<b><i>{{ scout.first_name }}</i></b>
-<div style="height: 200px; width: 200px; overflow: hidden; text-align: center">
-  <img src="{{scout.user_main_photo}}" style="height: 100%">
+<div class="my-page">
+  <div class="my-page_top">
+    <p>
+      {{ scout.first_name }} {{ scout.last_name }}
+    </p>
+  </div>
+  <div >
+    <img src="{{scout.user_main_photo}}" style="max-width: 100%">
+  </div>
+  <div class="our-color">
+    <p>My achievements</p>
+  </div>
+  <div class="my-page_achievements_list">
+    <div class="my-page_achievement"
+         *ngFor="let achievement of scout.got_achievements">
+      <img src="{{achievement.photo_data}}">
+    </div>
+  </div>
 </div>
